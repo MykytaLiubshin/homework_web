@@ -1,8 +1,11 @@
-
+body {
+  background-color: #b04;
+}
 
 table {
     border-collapse: collapse;
     width: 100%;
+  background-color: #fff;
   }
   
   th, td {
