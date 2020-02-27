@@ -1,5 +1,5 @@
 const customElements = [
-    ['table.html', 'Table'],
+    ['index.html', 'Table'],
     ['audio.html', 'Audio'],
     ['video.html', 'Video'],
 ]
