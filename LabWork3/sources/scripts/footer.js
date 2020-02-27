@@ -2,7 +2,6 @@ foot_pics = [
     ["https://github.com/MykytaLiubshin",`gh_logo.png`],
     ["https://gitlab.com/enotich13",`gl_logo.png`],
     ["https://www.instagram.com/herrgott_fox/",`ins_logo.jpg`],
-    ["https://www.pornhub.com/users/enotfreehugs",`PH_logo.jpg`],
     ["https://t.me/the_doom_guy",`tg_logo.png`],
 ]
 
