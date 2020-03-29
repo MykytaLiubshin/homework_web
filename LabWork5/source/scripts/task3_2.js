@@ -1,14 +1,16 @@
-const charCode = (letter) => letter.charCodeAt(0) - 64;
+const normilize_num = 64;
+const alphabet_len = 26;
+const z_code = 59;
+const charCode = (letter) => letter.charCodeAt(0) - normilize_num;
 const caesarCipher = (string, n) => {
-    n = n > 0 ? n % 26 : (n % 26) * -1;
-    return Array.from(string).map(el => charCode(el) > 0 && charCode(el) < 59
-        ? charCode(el) < 27
-            ? charCode(el) + n < 27
-                ? String.fromCharCode(charCode(el) + n + 64)
-                : String.fromCharCode(charCode(el) + n - 26 + 64)
-            : charCode(el) + n < 59
-                ? String.fromCharCode(charCode(el) + n + 64)
-                : String.fromCharCode(charCode(el) + n - 26 + 64)
+    n = n > 0 ? n % alphabet_len : (n % alphabet_len) * -1;
+    return Array.from(string).map(el => charCode(el) > 0 && charCode(el) < z_code
+        ? charCode(el) < alphabet_len + 1
+            ? charCode(el) + n < alphabet_len + 1
+                ? String.fromCharCode(charCode(el) + n + normilize_num)
+                : String.fromCharCode(charCode(el) + n - alphabet_len + normilize_num)
+            : charCode(el) + n < z_code
+                ? String.fromCharCode(charCode(el) + n + normilize_num)
+                : String.fromCharCode(charCode(el) + n - alphabet_len + normilize_num)
         : el).join("");
 };
-[...(Array(100).keys())].map(el => el - 50).map(el => console.log(caesarCipher("Always-Look-on-the-Bright-Side-of-Life", el)));
