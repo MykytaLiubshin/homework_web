@@ -1,12 +1,12 @@
+export {};
 const women_plus: number = 40
 const male_less_t: number = 10
 const months = { 1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "H",
                  7: "L", 8: "M", 9: "P", 10: "R", 11: "S", 12: "T" }
 const vowels = {"a":1, "o":2, "i":3, "e":4, "u":5}
 
-const isVowel = (letter: string): boolean => letter in vowels;
-const allVowel = (word: string): string => Array.from(word).map( el => isVowel(el) ? el : ``).join("");
-const allCons = (word: string): string => Array.from(word).map( el => isVowel(el) ? ``: el).join("");
+const allVowel = (word: string): string => Array.from(word).map( el => el in vowels ? el : ``).join("");
+const allCons = (word: string): string => Array.from(word).map( el => el in vowels ? ``: el).join("");
 
 const f_name = (name) => name.length == 2 ? name + "X"
 : name.length == 1 ? name + "XX"

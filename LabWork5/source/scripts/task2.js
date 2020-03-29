@@ -1,3 +1,4 @@
+export {};
 const isHoriz = (array) =>  !array.flatMap(
     elem => elem.flatMap(
         el => el == elem[0])).some(
