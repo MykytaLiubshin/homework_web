@@ -5,20 +5,32 @@ const months = { 1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "H",
 const vowels = { "a": 1, "o": 2, "i": 3, "e": 4, "u": 5 };
 const allVowel = (word) => Array.from(word).map(el => el in vowels ? el : ``).join("");
 const allCons = (word) => Array.from(word).map(el => el in vowels ? `` : el).join("");
-const f_name = (name) => name.length == 2 ? name + "X"
+const f_l_name = (name) => name.length == 2 ? name + "X"
     : name.length == 1 ? name + "XX"
         : name.length == 3 ? name
             : allCons(name).length > 2 ? allCons(name).slice(0, 3)
                 : allCons(name).length > 1 ? allVowel(name).length > 0 ? allCons(name) + allVowel(name).slice(0, 1) : allCons(name) + "X"
                     : allCons(name).length > 0 ? allVowel(name).length > 1 ? allCons(name) + allVowel(name).slice(0, 2) : allCons(name) + "XX"
                         : "";
+const f_f_name = (name) => name.length == 2 
+? name + "X"
+: name.length == 1 
+    ? name + "XX"
+    : name.length == 3 
+        ? name: allCons(name).length > 3
+        ? [0, 2, 3].map(ind => allCons(name)[ind]).join(""): allCons(name).length > 2 
+            ? allCons(name).slice(0, 3): allCons(name).length > 1 
+                ? allVowel(name).length > 0 
+                    ? allCons(name) + allVowel(name).slice(0, 1): allCons(name) + "X": allCons(name).length > 0 
+                    ? allVowel(name).length > 1 ? allCons(name) + allVowel(name).slice(0, 2) : allCons(name) + "XX"
+                    : "";
 const f_date = (date) => date.split('/');
 const f_dob = (date, gender) => `${f_date(date)[2].toString().slice(2, 4)}${months[eval(f_date(date)[1])]}${gender == "M" ?
     eval(f_date(date)[0]) < male_less_t ?
         "0" + f_date(date)[0] :
         f_date(date)[0] :
     women_plus + eval(f_date(date)[0])}`;
-const fiscalCode = (p) => `${f_name(p.surname.toLowerCase())}${f_name(p.name.toLowerCase())}${f_dob(p.dob, p.gender)}`.toUpperCase();
+const fiscalCode = (p) => `${f_l_name(p.surname.toLowerCase())}${f_f_name(p.name.toLowerCase())}${f_dob(p.dob, p.gender)}`.toUpperCase();
 
 var inputs = []
 
