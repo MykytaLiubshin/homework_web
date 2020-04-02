@@ -13,17 +13,24 @@ const f_l_name = (name) => name.length == 2 ? name + "X"
                     : allCons(name).length > 0 ? allVowel(name).length > 1 ? allCons(name) + allVowel(name).slice(0, 2) : allCons(name) + "XX"
                         : "";
 const f_f_name = (name) => name.length == 2 
-? name + "X"
+? allCons(name) + allVowel(name) + "X"
 : name.length == 1 
     ? name + "XX"
     : name.length == 3 
-        ? name: allCons(name).length > 3
-        ? [0, 2, 3].map(ind => allCons(name)[ind]).join(""): allCons(name).length > 2 
-            ? allCons(name).slice(0, 3): allCons(name).length > 1 
-                ? allVowel(name).length > 0 
-                    ? allCons(name) + allVowel(name).slice(0, 1): allCons(name) + "X": allCons(name).length > 0 
-                    ? allVowel(name).length > 1 ? allCons(name) + allVowel(name).slice(0, 2) : allCons(name) + "XX"
-                    : "";
+        ? name
+        : allCons(name).length > 3
+            ? [0, 2, 3].map(ind => allCons(name)[ind]).join("")
+            :allCons(name).length > 2 
+                ? allCons(name).slice(0, 3)
+                : allCons(name).length > 1 
+                    ? allVowel(name).length > 0 
+                        ? allCons(name) + allVowel(name).slice(0, 1)
+                        : allCons(name) + "X"
+                    : allCons(name).length > 0 
+                        ? allVowel(name).length > 1
+                            ? allCons(name) + allVowel(name).slice(0, 2)
+                            : allCons(name) + "XX"
+                        : "";
 const f_date = (date) => date.split('/');
 const f_dob = (date, gender) => `${f_date(date)[2].toString().slice(2, 4)}${months[eval(f_date(date)[1])]}${gender == "M" ?
     eval(f_date(date)[0]) < male_less_t ?
@@ -45,7 +52,7 @@ const submForm = () => {
 }
 
 const show_inputs = (inputs = inputs) => 
-document.getElementById("show_inputs").innerHTML = `<ul><div class="container-flex">${inputs.map(el => `<li class=""><p class="h2">${fiscalCode(
+document.getElementById("show_inputs").innerHTML = `<ul><div class="container-flex">${inputs.map(el => ` <li class=""><p class="h2">${fiscalCode(
     {
         name: el[0],
         surname: el[1],
