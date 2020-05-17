@@ -1,4 +1,5 @@
-const TOKEN = 'pk_b041607abcac4fb3aaff009f7bf3d6d4'
+const TOKEN = prompt("Input the key please");
+
 const to_id = (id, mode, message) =>
 {
 	if(mode == "add")
@@ -6,7 +7,7 @@ const to_id = (id, mode, message) =>
 	else if (mode == "replace")
 		document.getElementById(id).innerHTML =  message 
 }
-lastUpdate = 0
+lastUpdate = Date.now()
 const stocks = 
 [
 	"TTWO",
@@ -74,12 +75,11 @@ async function update_table(url, id)
 	.filter( el => el != null)
 	.map( el => Object.values(el) )
 	a = Object.values(a)
-	console.log(a)
 	const rows = document.getElementById(id).rows;
-	let x = 2;
+	let x = 0;
 	for (i in a)
 	{
-		let z = 2;
+		let z = 0;
 		for (j in a[i].quote)
 		{
 			rows[x].cells[z].textContent = a[i].quote[j] + " $";
@@ -89,9 +89,7 @@ async function update_table(url, id)
 	}
 }
 rxjs.interval(100)
-.subscribe(() => { document.getElementById('update').innerHTML = `<p class="h2 text-justify font-weight-light">${((Date.now() - lastUpdate) / 1000).toFixed(1)}</p>`; });
-
-
+.subscribe(() => to_id("update", "replace",`<p class="h2 text-justify font-weight-light">${((Date.now() - lastUpdate) / 1000).toFixed(1)}</p>`));
 
 use_done(url)
 
@@ -101,7 +99,3 @@ rxjs.interval(20000)
 	update_table(dyn_url, "replace");
 	lastUpdate = Date.now();
 })
-
-
-update_table(dyn_url, "replace")
-
