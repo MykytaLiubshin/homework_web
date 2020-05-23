@@ -1,10 +1,6 @@
 import React, {ReactFragment} from 'react';
-
+import { add_image } from "./Adder";
 const error_link = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTpCAnDlCKJOipsJFict-dQPhun3yAF-e8CKzs3GhUfLs2Bby5u&usqp=CAU"
-
-const deleted = {
-    display: "none"
-  };
 
 const delete_object = (index, hash) => {
     document.getElementById(index+hash).className="deleted"
@@ -33,12 +29,24 @@ export const GalleryElement = ( image, index ) =>
                 </div>
         );
 }
+const get_gallery = ( images ) => 
+{
+    return <div id="gallery_full">
+    {images["images"]['images'].map( (el, index) => GalleryElement(el['img'], index) )}
+    </div>
+}
 export const GalleryFull = (images) => 
 {
+    var len  = images['images']['images'].length;
     return(
-        <div>
-        {images["images"]['images'].map( (el, index) => GalleryElement(el['img'], index) )}
-        </div>
+        <>
+        <button className="btn-rnd" onClick={ () => {
+            var img = document.createElement('GalleryElement')
+            console.log(GalleryElement("",100))
+            document.getElementById("gallery_full").appendChild(img)
+        }}></button>
+        { get_gallery( images ) }
+        </>
         )
 }
 

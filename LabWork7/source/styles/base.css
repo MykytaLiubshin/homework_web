@@ -2,7 +2,45 @@ body {
     background-color: #1a1a1a;
     overflow-x: hidden;
 }
-
+nav
+{
+    background: none;
+}
+a:hover
+{
+    color: rgb(240, 209, 209);
+}
+.navbar_rock
+{
+    background-color: none;
+    margin-top: 20vh;
+    position: absolute;
+    z-index: 1;
+    color: aliceblue;
+}
+.leftie
+{
+    left: 15vw;
+}
+.rightie
+{
+    right: 15vw;
+}
+.activ
+{
+    color: white;
+    font-style: oblique;
+}
+a
+{
+    background-color: none;
+    color: #494646;
+    margin-top: 3vh;
+}
+.flex
+{
+    display: flex;
+}
 .grid {
     display: grid;
     height: 100vh;
@@ -35,11 +73,59 @@ body {
 }
 .c4 > img 
 {
-    width: 90 vw;
+    width: 100vw;
     height: 100vh;
 }
-.grid > .c5  {grid-column: 2 / 3; grid-row: 3 / 4;}
-.grid > .c6  {grid-column: 3 / 4; grid-row: 3 / 4;}
+.grid > .c5 
+{
+    grid-column: 1 / 5;
+    grid-row: 3 / 3;
+}
+.c5 > img 
+{
+    width: 100vw;
+    height: 100vh;
+}
+.c5 > .tp
+{
+    object-fit: cover;
+    height: 75vh;
+}
+.one
+{
+    object-fit: cover;
+    height: 25vh;
+    width: 25vw;
+}
+.two
+{
+    object-fit: cover;
+    height: 25vh;
+    width: 25vw;
+}
+.three
+{
+    object-fit: cover;
+    height: 25vh;
+    width: 25vw;
+}
+.four
+{
+    object-fit: cover;
+    height: 25vh;
+    width: 25vw;
+}
+.grid > .c6 
+{
+    grid-column: 1 / 5;
+    grid-row: 4 / 4;
+}
+.c6 > .bottom_top
+{
+    object-fit: cover;
+    width: 100vw;
+    height: 75vh;
+}
 .grid > .c7  {grid-column: 4 / 5; grid-row: 2 / 4;}
 .grid > .c8  {grid-column: 5 / 8; grid-row: 2 / 4;}
 .grid > .c9  {grid-column: 1 / 2; grid-row: 4 / 6;}
