@@ -46,8 +46,6 @@ const submForm = () => {
     x = Array.from(x.elements).map(el => el.value)
     x = x.slice(0,6)
     x.some(el => el === "") ?  {} : inputs.push(x.slice(0,7)) ;
-    console.log(inputs)
-    console.log(x)
     inputs.length == 0 ? {} :show_inputs(inputs);
 }
 

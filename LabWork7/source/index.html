@@ -13,11 +13,13 @@
     <div id="nav_one"></div>
     <div></div>
     <div class="grid">
+      <div id="your_email" class="c2"></div>
+
           <!-- TOP -->
         <!-- Notation style : 
           image id, src
                 class, events, styles-->
-                <div class="overlapper c2 modal-backdrop" id="overlapper">
+                 <div class="overlapper c2 modal-backdrop" id="overlapper">
           <div class="grid"> 
           <img src="static/top_message.png"
               class="top-message c2">
@@ -32,6 +34,24 @@
               onclick="drop()">www.simu.co</button>
 
             </div>
+        </div> 
+
+<!-- FORM BEGIN -->
+
+        <div class="overlapper modal-backdrop" id="overlapper-hider" style="display: none;"  >
+            <form name="emailform" id="overlapper-form">
+              <div class="grid"> 
+                <img src="static/top_message.png"
+              class="top-message c2">
+                <input type="text" class="form-control c2" placeholder="Input your email here to recieve further data"
+                aria-label="Emal" aria-describedby="basic-addon1">
+                <button type="button" type="submit" onclick="submForm()" class="c2 submit btn btn-success">Success</button>
+            </div>
+      </form>
+
+<!-- FORM END -->
+
+      
         </div>
           <div class="d-flex justify-content-between c2 bright over" style="margin-left: 10vw;">
             <img src="./static/top/intell.png" 
@@ -92,7 +112,6 @@
 
           <!-- BOTTOM -->
 
-
         <img id="bottom" src="static/bottom/bottom_photo.png"
             class="bottom_top c6" >
         <img src="static/bottom/footer.png"
@@ -109,7 +128,7 @@
             
       </div>
     </div>
-    <script src="scripts/navbar.js"></script>
+    <script src="scripts/scripts.js"></script>
 
 </body>
 </html>
