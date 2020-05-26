@@ -21,3 +21,7 @@ set_nav( 0, ids[0] )
 set_nav( 2, ids[1] )
 
 const show = () => console.log("Showin it")
+
+
+
+const drop = () => document.getElementById("overlapper").style="display: none;";

@@ -51,7 +51,7 @@ a
 }
 
 .grid > .c1  {
-    grid-column: 1 / 6
+    grid-column: 1 / 6;
     grid-row: 1 /1 ;
     margin-left: calc((105vw - 85vw)/2);
     margin-right: calc(-(100vw - 90vw)/2);
@@ -189,7 +189,7 @@ a
     margin-left: 10vw;
     width: 12vw;
 }
-.second_button:hover, .button-img:hover, .button_bottom:hover
+.second_button:hover, .button-img:hover, .button_bottom:hover, .red_button:hover
 {
     filter: brightness(75%);
 }
@@ -208,6 +208,26 @@ a
     color: #df676b;
     font-size: 9vh;
     font-family: monospace;
+}
+.red_small
+{
+    margin-top: 50vh;
+    margin-left: 27.5vw;
+    width: 50vw;
+    color: #df676b;
+    font-size: 4vh;
+    font-family: monospace;
+    z-index: 6;
+}
+.grey-smaller
+{
+    margin-top: 55vh;
+    margin-left: 37vw;
+    width: 50vw;
+    color: grey;
+    font-size: 2vh;
+    font-family: monospace;
+    z-index: 6;
 }
 .lower_paragraph
 {
@@ -270,4 +290,23 @@ a
 .faun
 {
     margin-left: calc( 50vw - 10vw ); 
+}
+.overlapper
+{
+    z-index: 5;
+    position: fixed;
+}
+.top-message
+{
+    margin-left: 3vw;
+}
+.modal-backdrop {
+    background-color:rgba(51, 51, 51, 0.8);
+  }
+
+.red-button
+{
+    margin-left: 43vw;
+    margin-top: 70vh;
+    z-index: 7;
 }
